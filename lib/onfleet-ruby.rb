@@ -19,6 +19,7 @@ require 'onfleet-ruby/actions/save'
 require 'onfleet-ruby/actions/update'
 require 'onfleet-ruby/actions/get'
 require 'onfleet-ruby/actions/list'
+require 'onfleet-ruby/actions/tasks/list_all'
 require 'onfleet-ruby/actions/delete'
 require 'onfleet-ruby/actions/query_metadata'
 
@@ -28,6 +29,7 @@ require 'onfleet-ruby/recipient'
 require 'onfleet-ruby/destination'
 require 'onfleet-ruby/address'
 require 'onfleet-ruby/task'
+require 'onfleet-ruby/tasks/all'
 require 'onfleet-ruby/organization'
 require 'onfleet-ruby/admin'
 require 'onfleet-ruby/team'
@@ -99,4 +101,3 @@ module Onfleet
     end
   end
 end
-

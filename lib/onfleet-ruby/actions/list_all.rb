@@ -1,10 +1,11 @@
 module Onfleet
   module Actions
-    module List
+    module ListAll
       module ClassMethods
-        def list(filters = {})
+        def list_all(filters = {})
           response = Onfleet.request(list_url_for(filters), :get)
-          response.compact.map { |item| new(item) }
+          binding.pry
+          response['tasks'].compact.map { |item| new(item) }
         end
 
         private
