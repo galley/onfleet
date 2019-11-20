@@ -112,6 +112,12 @@ RSpec.shared_examples_for Onfleet::Actions::QueryMetadata do |path:|
   end
 end
 
+RSpec.shared_examples_for Onfleet::Actions::Tasks::ListAll do |path:|
+  set_up_request_stub(:get, path)
+  let(:response_body) { [{ id: 'an-object' }] }
+  it_should_behave_like "an action that makes a request to Onfleet", method: :get
+end
+
 def set_up_request_stub(method, path)
   let(:url) { URI.join(Onfleet.base_url, path).to_s }
   let(:response) { { status: 200, body: response_body.to_json } }
@@ -123,4 +129,3 @@ def camelize_keys(hash)
     accumulator.merge(key.camelize(:lower) => value)
   end
 end
-
