@@ -5,8 +5,7 @@ module Onfleet
         module ClassMethods
           def list_all(filters = {})
             response = Onfleet.request(list_url_for(filters), :get)
-            binding.pry
-            response['tasks'].compact.map { |item| new(item) }
+            new(response)
           end
 
           private
