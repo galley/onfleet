@@ -302,6 +302,8 @@ Onfleet::Task.delete('TASK_ID')
 Onfleet::Task.list
 # You can also list tasks of certain states
 Onfleet::Task.list({state: 0}) # => returns all tasks with state 0, see official docs for valid states
+# To list a subset of tasks:
+Onfleet::Tasks::All.list_all({from: 1572408000000, completeBeforeBefore: 1573499400000, completeAfterAfter: 1573491300000})
 ```
 
 **Complete**
