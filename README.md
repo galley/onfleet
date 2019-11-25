@@ -288,9 +288,13 @@ task.notes = "Adding some notes"
 task.save
 ```
 
-**Get**
+**Get by id**
 ```ruby
 task = Onfleet::Task.get('TASK_ID')
+```
+**Get by short id**
+```ruby
+task = Onfleet::Tasks::ShortId.get_by_short_id('TASK_SHORT_ID')
 ```
 
 **Delete**
