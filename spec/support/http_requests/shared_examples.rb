@@ -118,6 +118,12 @@ RSpec.shared_examples_for Onfleet::Actions::Tasks::ListAll do |path:|
   it_should_behave_like "an action that makes a request to Onfleet", method: :get
 end
 
+RSpec.shared_examples_for Onfleet::Actions::Tasks::GetShortId do |path:|
+  set_up_request_stub(:get, path)
+  let(:response_body) { [{ short_id: 'at' }] }
+  it_should_behave_like "an action that makes a request to Onfleet", method: :get
+end
+
 def set_up_request_stub(method, path)
   let(:url) { URI.join(Onfleet.base_url, path).to_s }
   let(:response) { { status: 200, body: response_body.to_json } }
